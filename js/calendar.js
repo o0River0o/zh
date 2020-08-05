@@ -376,4 +376,8 @@
     url: '/calendar.json'
   };
 
+  $(document).ready(function () {
+    $('#calendar').aCalendar('zh-CN');//'zh-CN'请根据自己博客的语言选择
+  });
+
 }(jQuery));
