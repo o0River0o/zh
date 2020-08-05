@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Python3中的字符串</title>
+    <url>/2020/08/04/Python3%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h1 id="Python3-中的字符串"><a href="#Python3-中的字符串" class="headerlink" title="Python3 中的字符串"></a>Python3 中的字符串</h1><p>字符串是编程语言中较为常用的数据类型，用于存储文字、单词、语句等字符内容，Python中也是一样</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Python 中，可以使用 &#x27;&#x27; 或 &quot;&quot; 来创建字符串 (注意必须是半角符号)</span></span><br><span class="line">str1 = <span class="string">&#x27;我是一个字符串&#x27;</span></span><br><span class="line">str2 = <span class="string">&quot;我也是一个字符串&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>访问字符串：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str1 = <span class="string">&#x27;I am a String&#x27;</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">&#x27;str1 - &#x27;</span>,str1) <span class="comment">#输出整个字符串</span></span><br><span class="line">print(<span class="string">&#x27;str1[2:] - &#x27;</span>,str1[<span class="number">2</span>:]) <span class="comment">#从第二个字符开始输出（不包括第二个）</span></span><br><span class="line">print(<span class="string">&#x27;str1[:6] - &#x27;</span>,str1[:<span class="number">6</span>]) <span class="comment">#从开始读到第六个字符（不包括第六个）</span></span><br><span class="line">print(<span class="string">&#x27;str1[7:13] - &#x27;</span>,str1[<span class="number">7</span>:<span class="number">13</span>]) <span class="comment">#输出第8到第13位的字符（不包括第八个）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line">str1 - I am a String</span><br><span class="line">str1[<span class="number">2</span>:] - am a String</span><br><span class="line">str1[:<span class="number">6</span>] - I am a</span><br><span class="line">str1[<span class="number">7</span>:<span class="number">13</span>] - String</span><br></pre></td></tr></table></figure>
+
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>在需要在字符中使用特殊字符时，python用反斜杠()转义字符。如下表：</p>
+<table>
+<thead>
+<tr>
+<th align="left">转义字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">(在行尾时)</td>
+<td align="left">续行符</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">反斜杠符号</td>
+</tr>
+<tr>
+<td align="left">&#39;</td>
+<td align="left">单引号</td>
+</tr>
+<tr>
+<td align="left">&quot;</td>
+<td align="left">双引号</td>
+</tr>
+<tr>
+<td align="left">\a</td>
+<td align="left">响铃</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">退格(Backspace)</td>
+</tr>
+<tr>
+<td align="left">\000</td>
+<td align="left">空</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">换行</td>
+</tr>
+<tr>
+<td align="left">\v</td>
+<td align="left">纵向制表符</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">横向制表符</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="left">回车</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="left">换页</td>
+</tr>
+<tr>
+<td align="left">\oyy</td>
+<td align="left">八进制数，<strong>yy</strong> 代表的字符，例如：<strong>\o12</strong> 代表换行，其中 o 是字母，不是数字 0。</td>
+</tr>
+<tr>
+<td align="left">\xyy</td>
+<td align="left">十六进制数，yy代表的字符，例如：\x0a代表换行</td>
+</tr>
+<tr>
+<td align="left">\other</td>
+<td align="left">其它的字符以普通格式输出</td>
+</tr>
+</tbody></table>
+<h2 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h2><p>下表实例变量 a 值为字符串 “Hello”，b 变量值为 “Python”：</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">+</td>
+<td align="left">字符串连接</td>
+<td align="left">a + b 输出结果： HelloPython</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">重复输出字符串</td>
+<td align="left">a*2 输出结果：HelloHello</td>
+</tr>
+<tr>
+<td align="left">[]</td>
+<td align="left">通过索引获取字符串中字符</td>
+<td align="left">a[1] 输出结果 <strong>e</strong></td>
+</tr>
+<tr>
+<td align="left">[ : ]</td>
+<td align="left">截取字符串中的一部分，遵循<strong>左闭右开</strong>原则，str[0:2] 是不包含第 3 个字符的。</td>
+<td align="left">a[1:4] 输出结果 <strong>ell</strong></td>
+</tr>
+<tr>
+<td align="left">in</td>
+<td align="left">成员运算符 - 如果字符串中包含给定的字符返回 True</td>
+<td align="left"><strong>‘H’ in a</strong> 输出结果 True</td>
+</tr>
+<tr>
+<td align="left">not in</td>
+<td align="left">成员运算符 - 如果字符串中不包含给定的字符返回 True</td>
+<td align="left"><strong>‘M’ not in a</strong> 输出结果 True</td>
+</tr>
+<tr>
+<td align="left">r/R</td>
+<td align="left">原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母 <strong>r</strong>（可以大小写）以外，与普通字符串有着几乎完全相同的语法。</td>
+<td align="left"><code>print( r&#39;\n&#39; ) print( R&#39;\n&#39; )</code></td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">格式字符串</td>
+<td align="left">请看下一节内容。</td>
+</tr>
+</tbody></table>
+<h2 id="Python-的字符串内建函数"><a href="#Python-的字符串内建函数" class="headerlink" title="Python 的字符串内建函数"></a>Python 的字符串内建函数</h2><table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法及描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left"><code>capitalize()</code> 将字符串的第一个字符转换为大写</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left"><code>center(width, fillchar)</code> 返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left"><code>count(str, beg= 0,end=len(string))</code> 返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left"><code>bytes.decode(encoding=&quot;utf-8&quot;, errors=&quot;strict&quot;)</code> Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回。</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left"><code>encode(encoding=&#39;UTF-8&#39;,errors=&#39;strict&#39;)</code> 以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是’ignore’或者’replace’</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left"><code>endswith(suffix, beg=0, end=len(string))</code> 检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left"><code>expandtabs(tabsize=8)</code> 把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left"><code>find(str, beg=0, end=len(string))</code> 检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left"><code>index(str, beg=0, end=len(string))</code> 跟find()方法一样，只不过如果str不在字符串中会报一个异常。</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left"><code>isalnum() </code>如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">11</td>
+<td align="left"><code>isalpha()</code> 如果字符串至少有一个字符并且所有字符都是字母或中文字则返回 True, 否则返回 False</td>
+</tr>
+<tr>
+<td align="left">12</td>
+<td align="left"><code>isdigit()</code> 如果字符串只包含数字则返回 True 否则返回 False..</td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left"><code>islower()</code> 如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left"><code>isnumeric()</code> 如果字符串中只包含数字字符，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">15</td>
+<td align="left"><code>isspace()</code> 如果字符串中只包含空白，则返回 True，否则返回 False.</td>
+</tr>
+<tr>
+<td align="left">16</td>
+<td align="left"><code>istitle()</code> 如果字符串是标题化的(见 title())则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">17</td>
+<td align="left"><code>isupper()</code> 如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td align="left">18</td>
+<td align="left"><code>join(seq)</code> 以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串</td>
+</tr>
+<tr>
+<td align="left">19</td>
+<td align="left"><code>len(string)</code> 返回字符串长度</td>
+</tr>
+<tr>
+<td align="left">20</td>
+<td align="left"><code>ljust(width[, fillchar])</code> 返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。</td>
+</tr>
+<tr>
+<td align="left">21</td>
+<td align="left"><code>lower()</code> 转换字符串中所有大写字符为小写.</td>
+</tr>
+<tr>
+<td align="left">22</td>
+<td align="left"><code>lstrip()</code> 截掉字符串左边的空格或指定字符。</td>
+</tr>
+<tr>
+<td align="left">23</td>
+<td align="left"><code>maketrans()</code> 创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。</td>
+</tr>
+<tr>
+<td align="left">24</td>
+<td align="left"><code>max(str)</code> 返回字符串 str 中最大的字母。</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left"><code>min(str)</code> 返回字符串 str 中最小的字母。</td>
+</tr>
+<tr>
+<td align="left">26</td>
+<td align="left"><code>replace(old, new [,max])</code> 把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。</td>
+</tr>
+<tr>
+<td align="left">27</td>
+<td align="left"><code>rfind(str, beg=0,end=len(string))</code> 类似于 find()函数，不过是从右边开始查找.</td>
+</tr>
+<tr>
+<td align="left">28</td>
+<td align="left"><code>rindex( str, beg=0, end=len(string))</code> 类似于 index()，不过是从右边开始.</td>
+</tr>
+<tr>
+<td align="left">29</td>
+<td align="left"><code>rjust(width[,fillchar])</code> 返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串</td>
+</tr>
+<tr>
+<td align="left">30</td>
+<td align="left"><code>rstrip()</code> 删除字符串字符串末尾的空格.</td>
+</tr>
+<tr>
+<td align="left">31</td>
+<td align="left"><code>split(str=&quot;&quot;, num=string.count(str))</code> num=string.count(str)) 以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num+1 个子字符串</td>
+</tr>
+<tr>
+<td align="left">32</td>
+<td align="left"><code>splitlines([keepends])</code> 按照行(‘\r’, ‘\r\n’, \n’)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。</td>
+</tr>
+<tr>
+<td align="left">33</td>
+<td align="left"><code>startswith(substr, beg=0,end=len(string))</code> 检查字符串是否是以指定子字符串 substr 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。</td>
+</tr>
+<tr>
+<td align="left">34</td>
+<td align="left"><code>strip([chars])</code> 在字符串上执行 lstrip()和 rstrip()</td>
+</tr>
+<tr>
+<td align="left">35</td>
+<td align="left"><code>swapcase()</code> 将字符串中大写转换为小写，小写转换为大写</td>
+</tr>
+<tr>
+<td align="left">36</td>
+<td align="left"><code>title()</code> 返回”标题化”的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())</td>
+</tr>
+<tr>
+<td align="left">37</td>
+<td align="left"><code>translate(table, deletechars=&quot;&quot;)</code> 根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 deletechars 参数中</td>
+</tr>
+<tr>
+<td align="left">38</td>
+<td align="left"><code>upper()</code> 转换字符串中的小写字母为大写</td>
+</tr>
+<tr>
+<td align="left">39</td>
+<td align="left"><code>zfill (width)</code> 返回长度为 width 的字符串，原字符串右对齐，前面填充0</td>
+</tr>
+<tr>
+<td align="left">40</td>
+<td align="left"><code>isdecimal()</code> 检查字符串是否只包含十进制字符，如果是返回 true，否则返回 false。</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>语言笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+</search>
