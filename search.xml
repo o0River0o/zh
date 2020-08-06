@@ -1,6 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JAVA中的权限修饰符到底有什么区别？</title>
+    <url>/2020/08/06/JAVA%E4%B8%AD%E7%9A%84%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6%E5%88%B0%E5%BA%95%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F/</url>
+    <content><![CDATA[<p>昨天突然有人问我：你知道Java中的权限修饰符有哪些吗？</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tse2.mm.bing.net/th?id=OIP.c7okrWfG1o4QjtrCJKHgPwAAAA&pid=Api&P=0&w=198&h=111" alt="img"></p>
+<p>我也就知道有Private和Public啥的，其他的就记不清了。。</p>
+<p>但是人家都问了，肯定是要给个回复哒。所以我就开始翻书研究</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tse3.mm.bing.net/th?id=OIP.TFA2kWIvayPjJUThBgPiRgAAAA&pid=Api&P=0&w=300&h=300" alt="img"></p>
+<p>一番研究后，我算是搞懂了，那么现在就来到了分享时间：</p>
+<hr>
+<h1 id="JAVA中的权限修饰符"><a href="#JAVA中的权限修饰符" class="headerlink" title="JAVA中的权限修饰符"></a>JAVA中的权限修饰符</h1><h2 id="修饰符的种类"><a href="#修饰符的种类" class="headerlink" title="修饰符的种类"></a>修饰符的种类</h2><p>Java中的权限修饰符分为三种，以及一个默认设置：</p>
+<ul>
+<li><code>Public</code> - 公有</li>
+<li><code>Private</code> - 私有</li>
+<li><code>Protected</code> - 保护</li>
+<li><code>Default</code> - 默认</li>
+</ul>
+<p>​    那么先说说用得最多的<u>Public</u>和<u>Private</u>。</p>
+<p>​    首先，修饰符为<strong>Public</strong>的类，变量，方法或对象可以被所有本类，同一个包中的其他类和子类或其他包中的类和子类访问。也就是说，带有这个修饰符的元素在这个Java项目中是<font color="orange"><strong>完全公开</strong></font>存在的，任何此项目中的成员都可以去访问里面的内容。</p>
+<p>​    相反，修饰符为<strong>Private</strong>的元素就仅能被<font color="orange"><strong>本类</strong></font>中的其他元素或内部类访问。一旦一个元素被标示了Private修饰符，他在这个项目中便是私有的，只能在创建该元素的类中访问。</p>
+<p>​    然后就是在初学者的项目里不那么常见的<strong>Protected</strong>，带有Protected修饰符的类或对象仅允许<font color="orange"><strong>本类</strong></font>或<font color="orange"><strong>同包</strong></font>中的其他类和子类所访问。</p>
+<p>​    最后是Default，字面意思就是默认类型，也就是不加任何修饰符。默认情况下，如果元素没有添加任何的修饰符，将默认为<strong>包存取范围</strong>。也就是<font color="orange"><strong>同包</strong></font>中的所有类或子类都可以调用此元素。</p>
+<h2 id="权限表："><a href="#权限表：" class="headerlink" title="权限表："></a>权限表：</h2><p>以下为一张表格，分别显示了三种修饰符的权限：</p>
+<table>
+<thead>
+<tr>
+<th>访问包位置</th>
+<th align="center">Public</th>
+<th align="center">Private</th>
+<th align="center">Protected</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>本类</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td>同包中的其他类或子类</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td>其他包中的类或子类</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>​        总的来说，<code>Public</code>和<code>Protected</code>修饰的类可以由子类访问，但如果子类和父类不在同一个包中，那么只有修饰符为Public的类可以被子类进行访问。如果父类不允许通过继承产生的子类访问它的成员变量，那么必须使用<code>Private</code>声明父类的这个成员变量</p>
+]]></content>
+      <categories>
+        <category>语言笔记</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>权限修饰符</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【Python3.x】数字类型</title>
+    <url>/2020/08/05/Python%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h1 id="Python3-中的数字"><a href="#Python3-中的数字" class="headerlink" title="Python3 中的数字"></a>Python3 中的数字</h1><p>Python3 支持的数字类型</p>
+<ul>
+<li><strong>整型(int)</strong> - 通常被称为是整型或整数，是正或负整数。<u><strong>不带小数点，不限制大小</strong></u>，可以当作 Long （长整数）类型使用</li>
+<li><strong>浮点型(float)</strong> - 浮点型由<u><strong>整数部分</strong></u>与**<u>小数部分</u>**组成，可以使用科学计数法表示（2.5e2 = 2.5 x 102 = 250）</li>
+<li><strong>复数(complex)</strong> - 复数由<u><strong>实数部分</strong></u>和<u><strong>虚数部分</strong></u>构成，可以用<code>a + bj</code>,或者<code>complex(a,b)</code>表示， 复数的实部a和虚部b都是<u><strong>浮点型</strong></u>。</li>
+</ul>
+<p>例子：</p>
+<table>
+<thead>
+<tr>
+<th align="left">int 整形（16进制也属于整数）</th>
+<th align="left">float 浮点数 (注：复数的实部a和虚部b都是浮点型。)</th>
+<th align="left">complex 复数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">10</td>
+<td align="left">0.0</td>
+<td align="left">3.14j</td>
+</tr>
+<tr>
+<td align="left">100</td>
+<td align="left">15.20</td>
+<td align="left">45.j</td>
+</tr>
+<tr>
+<td align="left">-786</td>
+<td align="left">-21.9</td>
+<td align="left">9.322e-36j</td>
+</tr>
+<tr>
+<td align="left">080</td>
+<td align="left">23.42</td>
+<td align="left">.876j</td>
+</tr>
+<tr>
+<td align="left">-0490</td>
+<td align="left">-90.</td>
+<td align="left">-.6545+0J</td>
+</tr>
+<tr>
+<td align="left">-0x260</td>
+<td align="left">-32.54e100</td>
+<td align="left">3e+26J</td>
+</tr>
+<tr>
+<td align="left">0x69</td>
+<td align="left">70.2E-12</td>
+<td align="left">4.53e-7j</td>
+</tr>
+</tbody></table>
+<p>其他例如十进制以外的数字也可以使用（数字10为例）：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#赋值</span></span><br><span class="line">num = <span class="number">0xa</span> <span class="comment">#十六进制 Hexadecimal</span></span><br><span class="line">num = <span class="number">0o12</span> <span class="comment">#八进制 Octal</span></span><br><span class="line">num = <span class="number">0b1010</span> <span class="comment">#二进制 Binary</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Python-数字类型转换"><a href="#Python-数字类型转换" class="headerlink" title="Python 数字类型转换"></a>Python 数字类型转换</h2><p>有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。</p>
+<ul>
+<li><strong>int(x)</strong> - 将x转换为一个整数。</li>
+<li><strong>float(x)</strong> - 将x转换到一个浮点数。</li>
+<li><strong>complex(x)</strong> - 将x转换到一个复数，实数部分为 x，虚数部分为 0。</li>
+<li><strong>complex(x, y)</strong> - 将 x 和 y 转换到一个复数，实数部分为 x，虚数部分为 y。x 和 y 是数字表达式。</li>
+<li><strong>hex(x)</strong> - 将 x 转换为16进制数，前缀0x。</li>
+<li><strong>oct(x)</strong> - 将 x 转换为8进制数，前缀0o。</li>
+<li><strong>bin(x)</strong> - 将 x 转换为2进制数，前缀0b。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#案例</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(x) <span class="comment">#转换为整数（不会四舍五入）</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(x) <span class="comment">#转换为浮点数（整数默认往后显示一位）</span></span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>complex(x) <span class="comment">#转换为复数（虚数部分为0）</span></span><br><span class="line">(<span class="number">10</span>+<span class="number">0j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>complex(x,<span class="number">5j</span>) <span class="comment">#转换为复数（定义虚数部分）</span></span><br><span class="line">(<span class="number">5</span>+<span class="number">0j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hex(x) <span class="comment">#转换到16进制</span></span><br><span class="line"><span class="number">0xa</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>oct(x) <span class="comment">#转换到8进制</span></span><br><span class="line"><span class="number">0o12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bin(x) <span class="comment">#转换到2进制</span></span><br><span class="line"><span class="number">0b1010</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>语言笔记</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>数据类型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【Python3.x】字符串</title>
     <url>/2020/08/04/Python3%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
     <content><![CDATA[<h1 id="Python3-中的字符串"><a href="#Python3-中的字符串" class="headerlink" title="Python3 中的字符串"></a>Python3 中的字符串</h1><p>字符串是编程语言中较为常用的数据类型，用于存储文字、单词、语句等字符内容，Python中也是一样</p>
@@ -299,88 +442,7 @@
 ]]></content>
       <categories>
         <category>语言笔记</category>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>数据类型</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【Python3.x】数字类型</title>
-    <url>/2020/08/05/Python%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="Python3-中的数字"><a href="#Python3-中的数字" class="headerlink" title="Python3 中的数字"></a>Python3 中的数字</h1><p>Python3 支持的数字类型</p>
-<ul>
-<li><strong>整型(int)</strong> - 通常被称为是整型或整数，是正或负整数。<u><strong>不带小数点，不限制大小</strong></u>，可以当作 Long （长整数）类型使用</li>
-<li><strong>浮点型(float)</strong> - 浮点型由<u><strong>整数部分</strong></u>与**<u>小数部分</u>**组成，可以使用科学计数法表示（2.5e2 = 2.5 x 102 = 250）</li>
-<li><strong>复数(complex)</strong> - 复数由<u><strong>实数部分</strong></u>和<u><strong>虚数部分</strong></u>构成，可以用<code>a + bj</code>,或者<code>complex(a,b)</code>表示， 复数的实部a和虚部b都是<u><strong>浮点型</strong></u>。</li>
-</ul>
-<p>例子：</p>
-<table>
-<thead>
-<tr>
-<th align="left">int 整形（16进制也属于整数）</th>
-<th align="left">float 浮点数 (注：复数的实部a和虚部b都是浮点型。)</th>
-<th align="left">complex 复数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">10</td>
-<td align="left">0.0</td>
-<td align="left">3.14j</td>
-</tr>
-<tr>
-<td align="left">100</td>
-<td align="left">15.20</td>
-<td align="left">45.j</td>
-</tr>
-<tr>
-<td align="left">-786</td>
-<td align="left">-21.9</td>
-<td align="left">9.322e-36j</td>
-</tr>
-<tr>
-<td align="left">080</td>
-<td align="left">23.42</td>
-<td align="left">.876j</td>
-</tr>
-<tr>
-<td align="left">-0490</td>
-<td align="left">-90.</td>
-<td align="left">-.6545+0J</td>
-</tr>
-<tr>
-<td align="left">-0x260</td>
-<td align="left">-32.54e100</td>
-<td align="left">3e+26J</td>
-</tr>
-<tr>
-<td align="left">0x69</td>
-<td align="left">70.2E-12</td>
-<td align="left">4.53e-7j</td>
-</tr>
-</tbody></table>
-<p>其他例如十进制以外的数字也可以使用（数字10为例）：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#赋值</span></span><br><span class="line">num = <span class="number">0xa</span> <span class="comment">#十六进制 Hexadecimal</span></span><br><span class="line">num = <span class="number">0o12</span> <span class="comment">#八进制 Octal</span></span><br><span class="line">num = <span class="number">0b1010</span> <span class="comment">#二进制 Binary</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Python-数字类型转换"><a href="#Python-数字类型转换" class="headerlink" title="Python 数字类型转换"></a>Python 数字类型转换</h2><p>有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。</p>
-<ul>
-<li><strong>int(x)</strong> - 将x转换为一个整数。</li>
-<li><strong>float(x)</strong> - 将x转换到一个浮点数。</li>
-<li><strong>complex(x)</strong> - 将x转换到一个复数，实数部分为 x，虚数部分为 0。</li>
-<li><strong>complex(x, y)</strong> - 将 x 和 y 转换到一个复数，实数部分为 x，虚数部分为 y。x 和 y 是数字表达式。</li>
-<li><strong>hex(x)</strong> - 将 x 转换为16进制数，前缀0x。</li>
-<li><strong>oct(x)</strong> - 将 x 转换为8进制数，前缀0o。</li>
-<li><strong>bin(x)</strong> - 将 x 转换为2进制数，前缀0b。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#案例</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>int(x) <span class="comment">#转换为整数（不会四舍五入）</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>float(x) <span class="comment">#转换为浮点数（整数默认往后显示一位）</span></span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>complex(x) <span class="comment">#转换为复数（虚数部分为0）</span></span><br><span class="line">(<span class="number">10</span>+<span class="number">0j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>complex(x,<span class="number">5j</span>) <span class="comment">#转换为复数（定义虚数部分）</span></span><br><span class="line">(<span class="number">5</span>+<span class="number">0j</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hex(x) <span class="comment">#转换到16进制</span></span><br><span class="line"><span class="number">0xa</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>oct(x) <span class="comment">#转换到8进制</span></span><br><span class="line"><span class="number">0o12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>bin(x) <span class="comment">#转换到2进制</span></span><br><span class="line"><span class="number">0b1010</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>语言笔记</category>
-        <category>后端</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
