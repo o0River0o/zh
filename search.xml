@@ -4,10 +4,10 @@
     <title>JAVA中的权限修饰符到底有什么区别？</title>
     <url>/zh/posts/2020/0806/java-access-modifiers/</url>
     <content><![CDATA[<p>昨天突然有人问我：你知道Java中的权限修饰符有哪些吗？</p>
-<p><img src="https://tse2.mm.bing.net/th?id=OIP.c7okrWfG1o4QjtrCJKHgPwAAAA&pid=Api&P=0&w=198&h=111" alt="img"></p>
+<p><img src= "/zh/img/loading.gif" data-lazy-src="https://tse2.mm.bing.net/th?id=OIP.c7okrWfG1o4QjtrCJKHgPwAAAA&pid=Api&P=0&w=198&h=111" alt="img"></p>
 <p>我也就知道有Private和Public啥的，其他的就记不清了。。</p>
 <p>但是人家都问了，肯定是要给个回复哒。所以我就开始翻书研究</p>
-<p><img src="https://tse3.mm.bing.net/th?id=OIP.TFA2kWIvayPjJUThBgPiRgAAAA&pid=Api&P=0&w=300&h=300" alt="img"></p>
+<p><img src= "/zh/img/loading.gif" data-lazy-src="https://tse3.mm.bing.net/th?id=OIP.TFA2kWIvayPjJUThBgPiRgAAAA&pid=Api&P=0&w=300&h=300" alt="img"></p>
 <p>一番研究后，我算是搞懂了，那么现在就来到了分享时间：</p>
 <hr>
 <h1 id="JAVA中的权限修饰符"><a href="#JAVA中的权限修饰符" class="headerlink" title="JAVA中的权限修饰符"></a>JAVA中的权限修饰符</h1><h2 id="修饰符的种类"><a href="#修饰符的种类" class="headerlink" title="修饰符的种类"></a>修饰符的种类</h2><p>Java中的权限修饰符分为三种，以及一个默认设置：</p>
